@@ -1,0 +1,136 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-gray-50 group/design-root overflow-x-hidden" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#eaedf1] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#101418]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor"></path>
+              </svg>
+            </div>
+            <h2 class="text-[#101418] text-lg font-bold leading-tight tracking-[-0.015em]">Pulito &amp; Fresco</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#101418] text-sm font-medium leading-normal" href="#">Home</a>
+              <a class="text-[#101418] text-sm font-medium leading-normal" href="#">Servizi</a>
+              <a class="text-[#101418] text-sm font-medium leading-normal" href="#">Chi Siamo</a>
+              <a class="text-[#101418] text-sm font-medium leading-normal" href="#">Contatti</a>
+            </div>
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#b2cbe5] text-[#101418] text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+              <span class="truncate">Prenota Ora</span>
+            </button>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="@container">
+              <div class="@[480px]:p-4">
+                <div
+                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
+                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJpVJs_9c0zAm4jcliLe-sCUp-cH6BMheiD88IlhP6yjxFWeRwuNheOLNJhGTs4qPgFeEzk18rt-8v5zMLLj6CZDwiXPOtJpUv6ZXeFFso9GD8FaZWw2E8UtakHwEbJEmdzMbCdUYI82vNzWOo6wgoQEEBp3IUmgGj9UyO-fCMwB07As5EysvPEtyDd6pGiSOihtkDx2DQbNcBws-rCZprfyEZjhJOeWBUs8FDUEEOqX-Y_fZY69MYLPPmgzbgxSLZQ_fKyZpJLbk");'
+                >
+                  <div class="flex flex-col gap-2 text-center">
+                    <h1
+                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                    >
+                      Il Tuo Partner di Fiducia per il Lavaggio
+                    </h1>
+                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                      Forniamo servizi di lavanderia di alta qualità con cura e precisione.
+                    </h2>
+                  </div>
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#b2cbe5] text-[#101418] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                  >
+                    <span class="truncate">Prenota Ora</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#101418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">I Nostri Servizi</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#d4dbe2] bg-gray-50 p-4 flex-col">
+                <div class="text-[#101418]" data-icon="Lamp" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M247.35,148.85l-48-112A8,8,0,0,0,192,32H64a8,8,0,0,0-7.35,4.85l-48,112A8,8,0,0,0,16,160H120v48H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16H136V160h56v32a8,8,0,0,0,16,0V160h32a8,8,0,0,0,7.35-11.15ZM28.13,144,69.28,48H186.72l41.15,96Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <h2 class="text-[#101418] text-base font-bold leading-tight">Lavaggio</h2>
+                  <p class="text-[#5c728a] text-sm font-normal leading-normal">
+                    Offriamo una varietà di opzioni di lavaggio per soddisfare le tue esigenze. Esempio: Felpa lavaggio a partire da 6€
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#d4dbe2] bg-gray-50 p-4 flex-col">
+                <div class="text-[#101418]" data-icon="CoatHanger" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M241.57,171.2,141.33,96l23.46-17.6A8,8,0,0,0,168,72a40,40,0,1,0-80,0,8,8,0,0,0,16,0,24,24,0,0,1,47.69-3.78L123.34,89.49l-.28.21L14.43,171.2A16,16,0,0,0,24,200H232a16,16,0,0,0,9.6-28.8ZM232,184H24l104-78,104,78Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <h2 class="text-[#101418] text-base font-bold leading-tight">Stiratura</h2>
+                  <p class="text-[#5c728a] text-sm font-normal leading-normal">
+                    Ottieni i tuoi vestiti perfettamente stirati e pronti da indossare. Esempio: Camicia stiratura a partire da 5€
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#d4dbe2] bg-gray-50 p-4 flex-col">
+                <div class="text-[#101418]" data-icon="Broom" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M235.5,216.81c-22.56-11-35.5-34.58-35.5-64.8V134.73a15.94,15.94,0,0,0-10.09-14.87L165,110a8,8,0,0,1-4.48-10.34l21.32-53a28,28,0,0,0-16.1-37,28.14,28.14,0,0,0-35.82,16,.61.61,0,0,0,0,.12L108.9,79a8,8,0,0,1-10.37,4.49L73.11,73.14A15.89,15.89,0,0,0,55.74,76.8C34.68,98.45,24,123.75,24,152a111.45,111.45,0,0,0,31.18,77.53A8,8,0,0,0,61,232H232a8,8,0,0,0,3.5-15.19ZM67.14,88l25.41,10.3a24,24,0,0,0,31.23-13.45l21-53c2.56-6.11,9.47-9.27,15.43-7a12,12,0,0,1,6.88,15.92L145.69,93.76a24,24,0,0,0,13.43,31.14L184,134.73V152c0,.33,0,.66,0,1L55.77,101.71A108.84,108.84,0,0,1,67.14,88Zm48,128a87.53,87.53,0,0,1-24.34-42,8,8,0,0,0-15.49,4,105.16,105.16,0,0,0,18.36,38H64.44A95.54,95.54,0,0,1,40,152a85.9,85.9,0,0,1,7.73-36.29l137.8,55.12c3,18,10.56,33.48,21.89,45.16Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <h2 class="text-[#101418] text-base font-bold leading-tight">Lavaggio a Secco</h2>
+                  <p class="text-[#5c728a] text-sm font-normal leading-normal">Servizi professionali di lavaggio a secco per capi delicati.</p>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#101418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Contattaci</h2>
+            <p class="text-[#101418] text-base font-normal leading-normal pb-3 pt-1 px-4 text-center">
+              Vieni a trovarci in Via Principale 123, Anytown, USA o chiamaci al (555) 123-4567. Siamo aperti dal lunedì al sabato, dalle 8:00 alle 20:00.
+            </p>
+          </div>
+        </div>
+        <footer class="flex justify-center">
+          <div class="flex max-w-[960px] flex-1 flex-col">
+            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+                <a class="text-[#5c728a] text-base font-normal leading-normal min-w-40" href="#">Home</a>
+                <a class="text-[#5c728a] text-base font-normal leading-normal min-w-40" href="#">Servizi</a>
+                <a class="text-[#5c728a] text-base font-normal leading-normal min-w-40" href="#">Chi Siamo</a>
+                <a class="text-[#5c728a] text-base font-normal leading-normal min-w-40" href="#">Contatti</a>
+              </div>
+              <p class="text-[#5c728a] text-base font-normal leading-normal">© 2024 Pulito &amp; Fresco. Tutti i diritti riservati.</p>
+            </footer>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

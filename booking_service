@@ -1,0 +1,208 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-gray-50 group/design-root overflow-x-hidden"
+      style='--select-button-svg: url(&apos;data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(92,114,138)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e&apos;); font-family: "Public Sans", "Noto Sans", sans-serif;'
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#eaedf1] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#101418]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-[#101418] text-lg font-bold leading-tight tracking-[-0.015em]">Lava e Piega</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#101418] text-sm font-medium leading-normal" href="#">Home</a>
+              <a class="text-[#101418] text-sm font-medium leading-normal" href="#">Servizi</a>
+              <a class="text-[#101418] text-sm font-medium leading-normal" href="#">Prezzi</a>
+              <a class="text-[#101418] text-sm font-medium leading-normal" href="#">Posizioni</a>
+            </div>
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#eaedf1] text-[#101418] text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+              <span class="truncate">Accedi</span>
+            </button>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <h2 class="text-[#101418] tracking-light text-[28px] font-bold leading-tight px-4 text-center pb-3 pt-5">Programma il tuo ritiro</h2>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <input
+                  placeholder="Inserisci il tuo indirizzo"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#101418] focus:outline-0 focus:ring-0 border-none bg-[#eaedf1] focus:border-none h-14 placeholder:text-[#5c728a] p-4 text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <select
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#101418] focus:outline-0 focus:ring-0 border-none bg-[#eaedf1] focus:border-none h-14 bg-[image:--select-button-svg] placeholder:text-[#5c728a] p-4 text-base font-normal leading-normal"
+                >
+                  <option value="one"></option>
+                  <option value="two">two</option>
+                  <option value="three">three</option>
+                </select>
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <input
+                  placeholder="Numero di telefono"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#101418] focus:outline-0 focus:ring-0 border-none bg-[#eaedf1] focus:border-none h-14 placeholder:text-[#5c728a] p-4 text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <input
+                  placeholder="Istruzioni per la consegna (opzionale)"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#101418] focus:outline-0 focus:ring-0 border-none bg-[#eaedf1] focus:border-none h-14 placeholder:text-[#5c728a] p-4 text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <h3 class="text-[#101418] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Seleziona i tuoi articoli</h3>
+            <div class="flex items-center gap-4 bg-gray-50 px-4 min-h-[72px] py-2">
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCXUIl6ZWH0O4dOTnBtCIAIG9-in-RX3wa5cksiNuDo0AO9HWs5ReDkGweZ75SDfC_RDV6umbVZm5PRzFUUGocKVXqvD5g2byD82BKcTDEmuGkoxy-UaZnP3_qs21Q61rrAxBd86EAW2HM_rO1R2um8-cnsv5MrYVn7yGukR8WWf0cxPVZkOb2FdYexzsgQIEx-BnLoib-uKdnRP6gJJP2ZccBdFzkHOWm27t9nBMt1GsxzhJdkRz9g7I_YpnEKqseHm_xmydKk0d4");'
+              ></div>
+              <div class="flex flex-col justify-center">
+                <p class="text-[#101418] text-base font-medium leading-normal line-clamp-1">Lava e Piega</p>
+                <p class="text-[#5c728a] text-sm font-normal leading-normal line-clamp-2">10 kg</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-gray-50 px-4 min-h-[72px] py-2">
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAtFSo0F1ZAG4Oj5-a9lPkdl4o809x1s_5r_BCO8qszoKK5mEyIdqx9huph5G_uzD9TPFl4brWSMcQQiEfTOR8Mkwj7x9Sr39cmgH185posjGfIqhh0Z34M6JLnM4HrBmljnW05kkmeQJz66AE8GiM60bva3kppkqPOBB3D4L5zcltfbZEMQfJfwKWShmFA7ZUs_2jK4k0ftmXQ6RtMA0lc9mSabXCsFDX7LgqAX2apH-gg2Sgqo69rruqMO0hJpb6kA1qcbdz2zcQ");'
+              ></div>
+              <div class="flex flex-col justify-center">
+                <p class="text-[#101418] text-base font-medium leading-normal line-clamp-1">Asciugatura Appesa</p>
+                <p class="text-[#5c728a] text-sm font-normal leading-normal line-clamp-2">10 kg</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-gray-50 px-4 min-h-[72px] py-2">
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAK_pFfRW7P_ZMLy0PZRnEkWYKX4IgTKDrIAeaczJ_e22Vf-pVEiUwGghA9fEF1c6D4LFQXdM3SU7eW3ubSBeafJekdfF9lFU9OVcXTJ-iduPSaPSdqobrbpbF8swGWF8FYW7KdEmEGFe0AGrGjyGmcOpoDPwV3vGlLHrxlgGrZJr-JLZo3v25bOkqPL2Vx4Rf81e8BFF4Sk_R4XMr3zBiRHFKlRkdAxBoEi2hoe4Wu7m222DFkzAhfCPu0JJ0LKYomf15JDVqrgYM");'
+              ></div>
+              <div class="flex flex-col justify-center">
+                <p class="text-[#101418] text-base font-medium leading-normal line-clamp-1">Lavaggio a Secco</p>
+                <p class="text-[#5c728a] text-sm font-normal leading-normal line-clamp-2">10 kg</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-gray-50 px-4 min-h-[72px] py-2">
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVdS1fbYi1UT6EnrxaIrUEOio8iYibwc2txDa-iRn_oYwF1XNif1J7I3gNiulMteHtannJ06mR8mgfEFLCu7ZaiL-BM9jTROjukB_T_58seaLUzcMeCLZ5DnK_cQFzTF-pofygi3b07YV5rqrmbCmUr0toQPvIVXSg7IGcYmVJdezVkusVTyfKosHP5OpeDMfkdpvOLOCOU5BYsrqUQcDzZm1OLQyEuV8n0K5xmMae0A1aBT_Eh2Iq-ma5a3L_RCivLcgQZ3bwFSs");'
+              ></div>
+              <div class="flex flex-col justify-center">
+                <p class="text-[#101418] text-base font-medium leading-normal line-clamp-1">Piumoni</p>
+                <p class="text-[#5c728a] text-sm font-normal leading-normal line-clamp-2">10 kg</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-gray-50 px-4 min-h-[72px] py-2">
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWa2J3f_ResA_A-FJF-70DfhrstUrOvp8W490Yq6KXEA4Kt1hRZFdjulDq6Q3I6mBDRyPMzy1CTtbPDEbmqHV_LX7PKN5Joz850y5H3vHShYI7-CAR4p4lbEKqvnZVc_wmxZTnPH3dSZQdxE1dF42HykBHmtdFIwZMk4aO3wKKTP2V-uEEGmYjy6M9YPyFvnaY-XzK97igIQpD5RmDuXr30kkPARCwDH2JFr6Sy3uApX-aX7qexC8n8sL2SKH8N-SMjphjF3xB9Yc");'
+              ></div>
+              <div class="flex flex-col justify-center">
+                <p class="text-[#101418] text-base font-medium leading-normal line-clamp-1">Tappeti</p>
+                <p class="text-[#5c728a] text-sm font-normal leading-normal line-clamp-2">10 kg</p>
+              </div>
+            </div>
+            <h3 class="text-[#101418] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Seleziona gli orari di ritiro e consegna</h3>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <select
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#101418] focus:outline-0 focus:ring-0 border-none bg-[#eaedf1] focus:border-none h-14 bg-[image:--select-button-svg] placeholder:text-[#5c728a] p-4 text-base font-normal leading-normal"
+                >
+                  <option value="one"></option>
+                  <option value="two">two</option>
+                  <option value="three">three</option>
+                </select>
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <select
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#101418] focus:outline-0 focus:ring-0 border-none bg-[#eaedf1] focus:border-none h-14 bg-[image:--select-button-svg] placeholder:text-[#5c728a] p-4 text-base font-normal leading-normal"
+                >
+                  <option value="one"></option>
+                  <option value="two">two</option>
+                  <option value="three">three</option>
+                </select>
+              </label>
+            </div>
+            <h3 class="text-[#101418] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Riepilogo Ordine</h3>
+            <div class="p-4">
+              <div class="flex justify-between gap-x-6 py-2">
+                <p class="text-[#5c728a] text-sm font-normal leading-normal">Lava e Piega</p>
+                <p class="text-[#101418] text-sm font-normal leading-normal text-right">$20.00</p>
+              </div>
+              <div class="flex justify-between gap-x-6 py-2">
+                <p class="text-[#5c728a] text-sm font-normal leading-normal">Asciugatura Appesa</p>
+                <p class="text-[#101418] text-sm font-normal leading-normal text-right">$10.00</p>
+              </div>
+              <div class="flex justify-between gap-x-6 py-2">
+                <p class="text-[#5c728a] text-sm font-normal leading-normal">Ritiro</p>
+                <p class="text-[#101418] text-sm font-normal leading-normal text-right">Gratuito</p>
+              </div>
+              <div class="flex justify-between gap-x-6 py-2">
+                <p class="text-[#5c728a] text-sm font-normal leading-normal">Consegna</p>
+                <p class="text-[#101418] text-sm font-normal leading-normal text-right">Gratuito</p>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex justify-between gap-x-6 py-2">
+                <p class="text-[#5c728a] text-sm font-normal leading-normal">Subtotale</p>
+                <p class="text-[#101418] text-sm font-normal leading-normal text-right">$30.00</p>
+              </div>
+              <div class="flex justify-between gap-x-6 py-2">
+                <p class="text-[#5c728a] text-sm font-normal leading-normal">Tasse</p>
+                <p class="text-[#101418] text-sm font-normal leading-normal text-right">$2.40</p>
+              </div>
+              <div class="flex justify-between gap-x-6 py-2">
+                <p class="text-[#5c728a] text-sm font-normal leading-normal">Totale</p>
+                <p class="text-[#101418] text-sm font-normal leading-normal text-right">$32.40</p>
+              </div>
+            </div>
+            <div class="flex px-4 py-3">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 flex-1 bg-[#b2cbe5] text-[#101418] text-base font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Programma Ritiro</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
