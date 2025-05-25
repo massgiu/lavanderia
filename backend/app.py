@@ -1,12 +1,22 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 import datetime
 
 app = Flask(__name__)
+
+# --- Abilita CORS ---
+# Per sviluppo, puoi abilitare tutte le origini su tutte le rotte:
+#CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500", "supports_credentials": True}})
+# Per un ambiente di produzione o più specifico (raccomandato):
+# CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}}) 
+# Assicurati che 'http://127.0.0.1:5500' corrisponda esattamente alla tua origine frontend
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lavanderia.db'
-app.config['SECRET_KEY'] = 'your_secret_key'  # Replace with a strong secret key
+app.config['SECRET_KEY'] = 'fdsfadsfadsfasfds'  # Replace with a strong secret key
 db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)

@@ -165,6 +165,8 @@
         ordersContainer.innerHTML = ''; // Clear previous orders
 
         try {
+          //const backendUrl = 'http://127.0.0.1:5000';
+          //const response = await fetch(`${backendUrl}/api/orders`);
           const response = await fetch('/api/orders');
 
           if (response.status === 401) {
@@ -216,7 +218,9 @@
       if (logoutButton) {
         logoutButton.addEventListener('click', async function () {
           try {
-            const response = await fetch('/api/logout', {
+            const backendUrl = 'http://127.0.0.1:5000';
+            const response = await fetch(`${backendUrl}/api/logout`, {
+            //const response = await fetch('/api/logout', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

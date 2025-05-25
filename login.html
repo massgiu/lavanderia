@@ -30,8 +30,8 @@
           </div>
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
-              <a href="#" class="text-[#101418] text-sm font-medium leading-normal hover:text-gray-500 disabled-link">Servizi</a>
-              <a href="#" class="text-[#101418] text-sm font-medium leading-normal hover:text-gray-500 disabled-link">Contatti</a>
+              <a href="landing_page.html" class="text-[#101418] text-sm font-medium leading-normal hover:text-gray-500">Home</a>
+              <a href="contact.html" class="text-[#101418] text-sm font-medium leading-normal hover:text-gray-500">Contatti</a>
             </div>
             <div class="flex gap-2">
               <a href="login.html"
@@ -90,13 +90,14 @@
           const email = document.getElementById('email').value;
           const password = document.getElementById('password').value;
 
-        const data = {
-          email,
-          password,
-        };
+          const data = {
+            email,
+            password,
+          };
 
-        try {
-          const response = await fetch('/api/login', {
+          try {
+            const backendUrl = 'http://127.0.0.1:5000';
+            const response = await fetch(`${backendUrl}/api/login`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -106,16 +107,16 @@
 
           const result = await response.json();
 
-          if (response.status === 200 && result.user) {
-            messageDiv.textContent = 'Accesso effettuato con successo! Reindirizzamento...';
-            messageDiv.className = 'text-center p-2 rounded-md bg-green-100 border border-green-300 text-green-500';
-            // Store user info if needed, e.g., in localStorage
-            // localStorage.setItem('currentUser', JSON.stringify(result.user));
-            if (result.user.is_owner) {
-              window.location.href = 'dashboard.html';
-            } else {
-              window.location.href = 'order.html';
-            }
+        if (response.status === 200 && result.user) {
+          messageDiv.textContent = 'Accesso effettuato con successo! Reindirizzamento...';
+          messageDiv.className = 'text-center p-2 rounded-md bg-green-100 border border-green-300 text-green-500';
+          // Store user info if needed, e.g., in localStorage
+          // localStorage.setItem('currentUser', JSON.stringify(result.user));
+          if (result.user.is_owner) {
+            window.location.href = 'dashboard.html';
+          } else {
+            window.location.href = 'order.html';
+          }
           } else {
             messageDiv.textContent = result.message || `Errore ${response.status}: ${response.statusText}`;
             messageDiv.className = 'text-center p-2 rounded-md bg-red-100 border border-red-300 text-red-500';
