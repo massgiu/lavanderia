@@ -30,13 +30,13 @@
           </div>
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
-              <a class="text-[#101418] text-sm font-medium leading-normal" href="#">Servizi</a>
-              <a class="text-[#101418] text-sm font-medium leading-normal" href="#">Prezzi</a>
-              <a class="text-[#101418] text-sm font-medium leading-normal" href="#">Posizioni</a>
-              <a class="text-[#101418] text-sm font-medium leading-normal" href="#">Chi Siamo</a>
+              <a href="#" class="text-[#101418] text-sm font-medium leading-normal hover:text-gray-500 disabled-link">Servizi</a>
+              <a href="#" class="text-[#101418] text-sm font-medium leading-normal hover:text-gray-500 disabled-link">Prezzi</a>
+              <a href="#" class="text-[#101418] text-sm font-medium leading-normal hover:text-gray-500 disabled-link">Posizioni</a>
+              <a href="#" class="text-[#101418] text-sm font-medium leading-normal hover:text-gray-500 disabled-link">Chi Siamo</a>
             </div>
-            <button
-              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#eaedf1] text-[#101418] text-sm font-bold leading-normal tracking-[0.015em]"
+            <button id="loginHeaderButton"
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#eaedf1] text-[#101418] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200 disabled-link"
             >
               <span class="truncate">Accedi</span>
             </button>
@@ -45,125 +45,140 @@
         <div class="px-40 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
             <h2 class="text-[#101418] tracking-light text-[28px] font-bold leading-tight px-4 text-center pb-3 pt-5">Crea un account</h2>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
-                <div class="flex flex-col gap-1 flex-[2_2_0px]">
-                  <p class="text-[#101418] text-base font-bold leading-tight">Nome</p>
-                  <p class="text-[#5c728a] text-sm font-normal leading-normal">Inserisci il tuo nome</p>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJiCfkmqCbVyvnqDJmF_rkqsgZx7J7r65DMlCpHmTSs8N74TTDAJypcF65UXDe4xJqPIolci7RZQfonu6ySLaeqgsBh73o65Rwms8uD8y871gB0JFiefcgw_Lt2hfQVKYF45T76X4TmrgOWYheEAJTnD4-k5JqTGkO0A6_nEIBZaG0Fb7Vqe_J2vd0aWdum5I-guG3Pv_bvv-FGn1XxtrwevCdBNDPuJ0kju-hBECcUMRfauGsB9U0pBHqnZRPV1K5C4eujLLxIHs");'
-                ></div>
+            <form id="registerForm" class="space-y-4 p-4">
+              <div>
+                <label for="name" class="text-[#101418] text-base font-bold leading-tight">Nome</label>
+                <input type="text" id="name" name="name" placeholder="Inserisci il tuo nome" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2" required />
               </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
-                <div class="flex flex-col gap-1 flex-[2_2_0px]">
-                  <p class="text-[#101418] text-base font-bold leading-tight">Cognome</p>
-                  <p class="text-[#5c728a] text-sm font-normal leading-normal">Inserisci il tuo cognome</p>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdtDEz-YW_8ohZQnILEf4IJ31dtG4bShIF8VEjmlv6hcUGARFnviLzcqC3LethBjHtb1hFmRFZF4pgswt1Yk5ITBQvuXDYJDwOsFcn8lp29aj5fC1vXdbNH3wsV05WxcNV83ODY-msPFVG7F2AHdnooa4KtJxH93uCtM3lt10qviw4cMONXubD5KZfp_Ya_hpFJ7FOJBxZe1moLd1gbjEHSZaD7U9wJ9qjGuy0FUuunIe9h0EDsWi-eHWpNdJCT9-oGksXKesrr5c");'
-                ></div>
+              <div>
+                <label for="surname" class="text-[#101418] text-base font-bold leading-tight">Cognome</label>
+                <input type="text" id="surname" name="surname" placeholder="Inserisci il tuo cognome" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2" required />
               </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
-                <div class="flex flex-col gap-1 flex-[2_2_0px]">
-                  <p class="text-[#101418] text-base font-bold leading-tight">Email</p>
-                  <p class="text-[#5c728a] text-sm font-normal leading-normal">Inserisci la tua email</p>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAPSRJKRhZjjRshjTQF8797QQBke4AzoBbafKzF9P7Acn22CvZeTJZhdftJBmN8FuYbaASomMWvhQVBw33rmmjT5AlRGaCSa1XqB7OBZXr8OnW9vih6VBgt8rVk50k3zy8J3_JAkBMo9X3HTLE0x0yNgbiY0oSxQ1Znw2PrS3fNt7B-i2MPfUqvmY-v4J3sCxnynsKa7QbzWRR3bALTgQnSA2eKnbL0JiOByZNyvDSMOw25yzmee31IKusRYRiDqHLgd0GYvIk6Dic");'
-                ></div>
+              <div>
+                <label for="email" class="text-[#101418] text-base font-bold leading-tight">Email</label>
+                <input type="email" id="email" name="email" placeholder="Inserisci la tua email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2" required />
               </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
-                <div class="flex flex-col gap-1 flex-[2_2_0px]">
-                  <p class="text-[#101418] text-base font-bold leading-tight">Password</p>
-                  <p class="text-[#5c728a] text-sm font-normal leading-normal">Inserisci la tua password</p>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCniibUERDPxsXJF0CXeYZitZvjxu4c1x6IMKN2QiUBeol1anYUTfN--m5NOwDWBvFwrcyNK1vml0GfyWlU2evvz-mt4ZA0LeeZ9CVD9RrCIUtktr6GB4nNDmf8tcVJAvzb_N3cLvM4Lw-VUPz_vbTAE3QcUT2O7D4-_WFsyGmp2pmNzcvM5EJs2RU4lg40TtPRtGvuvct5D6gZdt88wmvHbElLQ3P3_51TqkGoyjew7PJe4nTiAuv-SflomM9PzbuXr0WbC6o_aHU");'
-                ></div>
+              <div>
+                <label for="password" class="text-[#101418] text-base font-bold leading-tight">Password</label>
+                <input type="password" id="password" name="password" placeholder="Inserisci la tua password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2" required />
               </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
-                <div class="flex flex-col gap-1 flex-[2_2_0px]">
-                  <p class="text-[#101418] text-base font-bold leading-tight">Numero di telefono</p>
-                  <p class="text-[#5c728a] text-sm font-normal leading-normal">Inserisci il tuo numero di telefono</p>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBFo5qALSpnOazu2CpO4cFbRGUniXngJQCqez6NzKT3LybadRdTFy9xwmisRq6721VrvMc9yge5-ufAl752t6aUHcJ0j9xN-66npC-ODYdpANyK7peJdqU7_JKNGTxBBQOjWhSnxVp2mJFROtPBW_Uapezfkz1nXIR0I8s_2X6KL5GJijeitQ6XqCnRtshPWuUNp5gQB3NlEhAdMUF0Z4r3aLuI0tWSAUvx39NGtGLMRjBJ0x952RGrpKt3kD5PD22MT3gAKL3-GUc");'
-                ></div>
+              <div>
+                <label for="phone_number" class="text-[#101418] text-base font-bold leading-tight">Numero di telefono</label>
+                <input type="tel" id="phone_number" name="phone_number" placeholder="Inserisci il tuo numero di telefono" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2" />
               </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
-                <div class="flex flex-col gap-1 flex-[2_2_0px]">
-                  <p class="text-[#101418] text-base font-bold leading-tight">Indirizzo</p>
-                  <p class="text-[#5c728a] text-sm font-normal leading-normal">Inserisci il tuo indirizzo</p>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlGxL-7_S8nfuwElVAHllJIgRK03pLhfqpFSPgJIMD543qKmmVwdwWF85bZEVkk66YDmJSeIeq6n1RKLaqjYFEWMG7LkP3i_eFq_DJKr2S226LoaLPdmImyu8fnbKK58zMk2aTZtmCOScsljhCQ_cXN46daP2IuRCBAOoBNY7Zj4NhEsGi3d44HbnmUGVUZQoIyJF5q28XU3L65AtriLNLjogVca_6lx0iaj6rkfvHUN8z0Q8-Ttf-ktpoW2T5w3B4D-p0YHSxV6s");'
-                ></div>
+              <div>
+                <label for="address" class="text-[#101418] text-base font-bold leading-tight">Indirizzo</label>
+                <input type="text" id="address" name="address" placeholder="Inserisci il tuo indirizzo" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2" />
               </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
-                <div class="flex flex-col gap-1 flex-[2_2_0px]">
-                  <p class="text-[#101418] text-base font-bold leading-tight">Città</p>
-                  <p class="text-[#5c728a] text-sm font-normal leading-normal">Inserisci la tua città</p>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA6GimE5XlYm4KzlXMlAwp5zIN3NDFkIfV_XB5CnxJpNsHCqWnJZmICTrQG4iUmCTjTMt1PQbiRvjgvTrxOGVYxQvOjbgapz9dvUS7NJG5k18jPVHsWaxIUdnsNchnTPiup4pmhHHQrYTXLvzEduS2BRbLB1DwboyXaCZNnNH3-vrCxDAfU3KveSos9Rs86AY2VvodYy2aMrXakBbYr0pH8Grjo9PjWIluv90bURrhRq_2y5uvpixv-Zw2rkoqTE39GY9GG_HB1-kk");'
-                ></div>
+              <div>
+                <label for="city" class="text-[#101418] text-base font-bold leading-tight">Città</label>
+                <input type="text" id="city" name="city" placeholder="Inserisci la tua città" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2" />
               </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
-                <div class="flex flex-col gap-1 flex-[2_2_0px]">
-                  <p class="text-[#101418] text-base font-bold leading-tight">Stato</p>
-                  <p class="text-[#5c728a] text-sm font-normal leading-normal">Inserisci il tuo stato</p>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBvPJfmM9T4-jBb6RAvx_8ccuVaXQ0eRLSLnHZJIFysKzTUkRUoDpNR0jksNr_aMeAJsDQKyvf9-rQIvKqIHyoRb_I-kxVm4nbRUKIQkV0nKUst_DkPgSm2Uf0umFuYXhu6TEuMOWLlOjPyn7Q9zesfgp-uSN11s2xRdhomoAFGesPhRx3mNxyExbSkftT9B0cL0NHSPsVqEnTnrFU2D8Y3x4aJjO0onRRFWg4GOjlCeOoW0u8xcV4zVGCVtsrsqEUbs3TZKVzGVk0");'
-                ></div>
+              <div>
+                <label for="state" class="text-[#101418] text-base font-bold leading-tight">Stato</label>
+                <input type="text" id="state" name="state" placeholder="Inserisci il tuo stato" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2" />
               </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
-                <div class="flex flex-col gap-1 flex-[2_2_0px]">
-                  <p class="text-[#101418] text-base font-bold leading-tight">Codice postale</p>
-                  <p class="text-[#5c728a] text-sm font-normal leading-normal">Inserisci il tuo codice postale</p>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDXbECORs7FYS8lDCyryO_CPGEHXuA1iq2Hhdal8AsTNYe1gBu1BJA3jFZ3Lwbx07YnQK0ZMcXCASQivf2Zv5CyBsPCXojLCPHSJ8RHbWJI95cbMjN9M_37K3KT4kXpF9o-lEp8fSVPKgsUeBupC4eIAeMSXaoaMdCuS30_RRk3MWqiftRvtmsLX61_kLFCrPo37XiGxYFBZX3nHWL6wyfxdZNbfMC6S5Nwk77jPIgEpLeOd55tKxm9KafBUU5LtdrmLUmQ-gfn9yU");'
-                ></div>
+              <div>
+                <label for="postal_code" class="text-[#101418] text-base font-bold leading-tight">Codice postale (Opzionale)</label>
+                <input type="text" id="postal_code" name="postal_code" placeholder="Inserisci il tuo codice postale" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2" />
               </div>
-            </div>
-            <div class="flex px-4 py-3">
-              <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 flex-1 bg-[#b2cbe5] text-[#101418] text-base font-bold leading-normal tracking-[0.015em]"
-              >
-                <span class="truncate">Crea Account</span>
-              </button>
-            </div>
-            <p class="text-[#5c728a] text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center underline">Hai già un account? Accedi</p>
+              <div id="messageDiv" class="text-center p-2 rounded-md"></div>
+              <div class="flex px-4 py-3">
+                <button type="submit" id="registerButton" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 flex-1 bg-[#b2cbe5] hover:bg-blue-600 text-[#101418] hover:text-white text-base font-bold leading-normal tracking-[0.015em] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50">
+                  <span class="truncate">Crea Account</span>
+                </button>
+              </div>
+            </form>
+            <p class="text-[#5c728a] text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center">
+              Hai già un account? <a href="login.html" class="underline hover:text-blue-700">Accedi</a>
+            </p>
           </div>
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const registerForm = document.getElementById('registerForm');
+        const messageDiv = document.getElementById('messageDiv');
+        const registerButton = document.getElementById('registerButton');
+
+        registerForm.addEventListener('submit', async function (event) {
+          event.preventDefault();
+          
+          registerButton.disabled = true;
+          messageDiv.textContent = 'Registrazione in corso...';
+          messageDiv.className = 'text-center p-2 rounded-md bg-blue-100 border border-blue-300 text-blue-500';
+
+          const name = document.getElementById('name').value;
+          const surname = document.getElementById('surname').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const phone_number = document.getElementById('phone_number').value;
+        const address = document.getElementById('address').value;
+        const city = document.getElementById('city').value;
+        const state = document.getElementById('state').value;
+        const postal_code = document.getElementById('postal_code').value;
+
+        const data = {
+          name,
+          surname,
+          email,
+          password,
+          phone_number,
+          address,
+          city,
+          state,
+          postal_code,
+        };
+
+        try {
+          const response = await fetch('/api/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          });
+
+          const result = await response.json();
+
+          if (response.status === 201) {
+            messageDiv.textContent = 'Registrazione avvenuta con successo! Sarai reindirizzato al login.';
+            messageDiv.className = 'text-center p-2 rounded-md bg-green-100 border border-green-300 text-green-500';
+            setTimeout(() => {
+              window.location.href = 'login.html';
+            }, 2000);
+          } else {
+            messageDiv.textContent = result.message || `Errore ${response.status}: ${response.statusText}`;
+            messageDiv.className = 'text-center p-2 rounded-md bg-red-100 border border-red-300 text-red-500';
+          }
+        } catch (error) {
+          console.error('Error during registration:', error);
+          messageDiv.textContent = 'Errore durante la registrazione. Riprova più tardi.';
+          messageDiv.className = 'text-center p-2 rounded-md bg-red-100 border border-red-300 text-red-500';
+        } finally {
+          registerButton.disabled = false;
+        }
+      });
+
+      // Add event listeners for disabled links in header
+      document.querySelectorAll('.disabled-link').forEach(link => {
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
+          // For the "Accedi" button in header, it should ideally go to login.html
+          if (event.currentTarget.id === 'loginHeaderButton') {
+             window.location.href = 'login.html'; // Or keep it disabled if preferred for this page
+             return; 
+          }
+          alert('Funzionalità non ancora implementata.');
+        });
+        // Optionally, style them more distinctly as disabled if not done by a global class
+        if (event.currentTarget.id !== 'loginHeaderButton') { // Don't visually disable login button if it's functional
+            link.style.opacity = '0.5';
+            link.style.cursor = 'not-allowed';
+        }
+      });
+    });
+    </script>
   </body>
 </html>
