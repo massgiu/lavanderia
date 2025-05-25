@@ -1,5 +1,8 @@
 import pytest
 import json
+import os
+import sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from app import Order, User # Assuming Order model is accessible
 
 # Helper to create an order directly for setup purposes if needed
