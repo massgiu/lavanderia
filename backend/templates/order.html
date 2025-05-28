@@ -25,7 +25,7 @@
                     class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
                     style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDx4UAimx9dGQHn6rgMPZYFUW7vyvZSJaf0HAme_dS1N4f-zukAAgKLjCkHKiKBBLg8n4dtQdSKSGu6HtZbJNRL0V0cdaYtQYz3v6Z7_Zwy7c5IFDlBaima6Tolp78EDW_vsKBTkqdjMAWSA0Ofazx_FbX_nPi95Oj2O6nKj8tMgWt83sKQhOji6iD8HpOBeSPJK9Prla6YdJ5UHj24o7Tf9No8fOP5HXRjJ0mOv99RTh5mfPdlE2f8dts_J8MzOMRAGF9LnEMKJSw");'
                   ></div>
-                  <h1 class="text-[#101418] text-base font-medium leading-normal">Sofia Rossi</h1>
+                  <h1 id="userFullName" class="text-[#101418] text-base font-medium leading-normal">Sofia Rossi</h1>
                 </div>
                 <div class="flex flex-col gap-2">
                   <div id="navPrenota" class="flex items-center gap-3 px-3 py-2 cursor-pointer hover:bg-gray-200 rounded-md disabled-link">
@@ -103,6 +103,20 @@
   </body>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      //carico i nomi e cogmome dell'utemte da localstorage
+      const userData = JSON.parse(localStorage.getItem('user'));
+      console.log('Dati utente recuperati:', userData);
+      if (userData) {
+        const fullName = `${userData.name} ${userData.surname}`;
+        const nameTag = document.getElementById('userFullName');
+        if (nameTag) {
+          nameTag.textContent = fullName;
+        }
+        //} else {
+          // Se non c'è utente salvato, forse è scaduta la sessione → redirect
+        //  window.location.href = 'login.html';
+      }
+
       const ordersContainer = document.getElementById('ordersContainer');
       const ordersMessage = document.getElementById('ordersMessage');
 
@@ -165,14 +179,15 @@
         ordersContainer.innerHTML = ''; // Clear previous orders
 
         try {
-          //const backendUrl = 'http://127.0.0.1:5000';
-          //const response = await fetch(`${backendUrl}/api/orders`);
-          const response = await fetch('/api/orders');
+          const response = await fetch(`/api/orders`,{
+          method: 'GET',
+          credentials: 'include' // 🔑 Necessario per inviare il cookie di login
+        });
 
-          if (response.status === 401) {
-            window.location.href = 'login.html';
-            return;
-          }
+          //if (response.status === 401) {
+          //  window.location.href = 'login.html';
+          //  return;
+          //}
 
           if (!response.ok) {
             const errorResult = await response.json().catch(() => null);
@@ -218,16 +233,16 @@
       if (logoutButton) {
         logoutButton.addEventListener('click', async function () {
           try {
-            const backendUrl = 'http://127.0.0.1:5000';
-            const response = await fetch(`${backendUrl}/api/logout`, {
+            const response = await fetch(`/api/logout`, {
             //const response = await fetch('/api/logout', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
-              }
+              },
+              credentials: 'include' // 🔥 ESSENZIALE per inviare il cookie
             });
             if (response.ok) {
-              window.location.href = 'login.html';
+              window.location.href = '/login';
             } else {
               const result = await response.json().catch(() => null);
               alert(result?.message || 'Logout failed. Please try again.');

@@ -30,10 +30,10 @@
           </div>
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
-              <a href="landing_page.html" class="text-[#101418] text-sm font-medium leading-normal hover:text-gray-500">Home</a>
-              <a href="contact.html" class="text-[#101418] text-sm font-medium leading-normal hover:text-gray-500">Contatti</a>
+              <a href="/home" class="text-[#101418] text-sm font-medium leading-normal hover:text-gray-500">Home</a>
+              <a href="/contact" class="text-[#101418] text-sm font-medium leading-normal hover:text-gray-500">Contatti</a>
             </div>
-            <a href="login.html"
+            <a href="/login"
                 class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#b2cbe5] text-[#101418] text-sm font-bold leading-normal tracking-[0.015em] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 <span class="truncate">Accedi</span>
@@ -130,8 +130,7 @@
         };
 
         try {
-            const backendUrl = 'http://127.0.0.1:5000';
-            const response = await fetch(`${backendUrl}/api/register`, {
+            const response = await fetch(`/api/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

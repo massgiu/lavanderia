@@ -1,22 +1,18 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
+
 import datetime
 
 app = Flask(__name__)
+#CORS(app, supports_credentials=True)
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lavanderia.db'
+app.config['SECRET_KEY'] = '76661be67f58d95a0d538126e2353032794b561845e57b20'  # Replace with a strong secret key
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# --- Abilita CORS ---
-# Per sviluppo, puoi abilitare tutte le origini su tutte le rotte:
-#CORS(app)
-CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500", "supports_credentials": True}})
-# Per un ambiente di produzione o più specifico (raccomandato):
-# CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}}) 
-# Assicurati che 'http://127.0.0.1:5500' corrisponda esattamente alla tua origine frontend
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lavanderia.db'
-app.config['SECRET_KEY'] = 'fdsfadsfadsfasfds'  # Replace with a strong secret key
 db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -65,6 +61,22 @@ class User(UserMixin, db.Model):
         if include_orders:
             user_dict['orders'] = [order.to_dict() for order in self.orders]
         return user_dict
+    
+@app.route('/home')
+def landing_page():
+    return render_template('landing_page.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/order')
+def order():
+    return render_template('order.html')
+
+@app.route('/register')
+def create_account():
+    return render_template('create_account.html')
 
 # Define Order model
 class Order(db.Model):
@@ -97,7 +109,14 @@ class Order(db.Model):
 
 @login_manager.user_loader
 def load_user(user_id):
-    return db.session.get(User, int(user_id))
+    # return db.session.get(User, int(user_id))
+    print(f"\n--- DEBUG: load_user chiamato con user_id: {user_id} ---")
+    user = db.session.get(User, int(user_id))
+    if user:
+        print(f"--- DEBUG: Utente {user.email} con ID {user.id} trovato. ---")
+    else:
+        print(f"--- DEBUG: Utente con ID {user_id} NON trovato nel DB. ---")
+    return user
 
 @app.route('/api/register', methods=['POST'])
 def register():
@@ -135,34 +154,37 @@ def register():
 
     return jsonify({'message': 'User registered successfully'}), 201
 
-@app.route('/api/login', methods=['POST'])
+@app.route('/login', methods=['POST','GET'])
 def login():
-    data = request.get_json()
-    email = data.get('email')
-    password = data.get('password')
+    if request.method == 'POST':
+        data = request.get_json()
+        email = data.get('email')
+        password = data.get('password')
 
-    if not email or not password:
-        return jsonify({'message': 'Email and password are required'}), 400
+        if not email or not password:
+            return jsonify({'message': 'Email and password are required'}), 400
 
-    user = User.query.filter_by(email=email).first()
+        user = User.query.filter_by(email=email).first()
 
-    if not user or not check_password_hash(user.password_hash, password):
-        return jsonify({'message': 'Invalid email or password'}), 401
+        if not user or not check_password_hash(user.password_hash, password):
+            return jsonify({'message': 'Invalid email or password'}), 401
 
-    login_user(user)
-    user_data = {
-        'id': user.id,
-        'name': user.name,
-        'surname': user.surname,
-        'email': user.email,
-        'phone_number': user.phone_number,
-        'address': user.address,
-        'city': user.city,
-        'state': user.state,
-        'postal_code': user.postal_code,
-        'is_owner': user.is_owner
-    }
-    return jsonify({'message': 'Login successful', 'user': user_data}), 200
+        login_user(user)
+        user_data = {
+            'id': user.id,
+            'name': user.name,
+            'surname': user.surname,
+            'email': user.email,
+            'phone_number': user.phone_number,
+            'address': user.address,
+            'city': user.city,
+            'state': user.state,
+            'postal_code': user.postal_code,
+            'is_owner': user.is_owner
+        }
+        return jsonify({'message': 'Login successful', 'user': user_data}), 200
+     # GET -> mostra la pagina di login
+    return render_template('login.html')
 
 @app.route('/api/logout', methods=['POST'])
 @login_required
@@ -177,26 +199,30 @@ def parse_datetime(datetime_str):
     return None
 
 # Order Management API Endpoints
-@app.route('/api/orders', methods=['POST'])
+@app.route('/api/orders', methods=['GET','POST'])
 @login_required
-def create_order():
-    data = request.get_json()
-    items_description = data.get('items_description')
-    pickup_date_str = data.get('pickup_date')
-    delivery_date_str = data.get('delivery_date')
-    total_price = data.get('total_price')
+def handle_orders():
+    if request.method == 'GET':
+        user_orders = Order.query.filter_by(user_id=current_user.id).all()
+        return jsonify([order.to_dict() for order in user_orders])
+    if request.method == 'POST':
+        data = request.get_json()
+        items_description = data.get('items_description')
+        pickup_date_str = data.get('pickup_date')
+        delivery_date_str = data.get('delivery_date')
+        total_price = data.get('total_price')
 
-    if not items_description:
-        return jsonify({'message': 'Items description is required'}), 400
+        if not items_description:
+            return jsonify({'message': 'Items description is required'}), 400
 
-    new_order = Order(
-        user_id=current_user.id,
-        items_description=items_description,
-        pickup_date=parse_datetime(pickup_date_str),
-        delivery_date=parse_datetime(delivery_date_str),
-        total_price=total_price,
-        status='Pending' # Default status
-    )
+        new_order = Order(
+            user_id=current_user.id,
+            items_description=items_description,
+            pickup_date=parse_datetime(pickup_date_str),
+            delivery_date=parse_datetime(delivery_date_str),
+            total_price=total_price,
+            status='Pending' # Default status
+        )
     db.session.add(new_order)
     db.session.commit()
     return jsonify(new_order.to_dict()), 201
